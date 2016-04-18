@@ -148,13 +148,11 @@ class Dot(object):
             names = [self.__class__.__name__]
 
         for name in names:
-            imgfile = os.path.join(os.path.realpath(os.path.dirname(__file__)), 'images', '%s.png' % name)
-
-            if os.path.exists(imgfile):
-                imagestr = ', image="%s", shape=box ' % imgfile
-                break
-        else:
-            imagestr = ', shape=box'
+            image = 'https://cdn.rawgit.com/bjorand/aws-map/master/images/%s.png' % name
+            imagestr = ', image="%s", shape=box ' % image
+            #if os.path.exists(imgfile):
+            #imagestr = ', image="%s", shape=box ' % imgfile
+            #    break
         return imagestr
 
 
